@@ -3,9 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Variables</title>
 </head>
 <body>
-  
+  <script>
+    const name = 'Justin';
+    console.log(`My name is: ${name}`);
+
+    const coffeePrice = 5;
+    const bagelsPrice = 3;
+    const soupPrice = 9;
+    let coffee = 1;
+    let bagels = 2;
+    let soup = 1;
+
+    let coffeeTotal = coffeePrice * coffee;
+    let bagelsTotal = bagelsPrice * bagels;
+    let soupTotal = soupPrice * soup;
+
+    let cost = (coffeeTotal + bagelsTotal + soupTotal);
+    const taxes = Math.round(cost) * 0.1;
+    const total = cost + taxes;
+    console.log(`Your total cost: $${cost} \n Taxes (10%): $${taxes} \n Your Total: $${total}`);
+
+  </script>
 </body>
 </html>
