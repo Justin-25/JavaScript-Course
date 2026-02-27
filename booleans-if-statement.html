@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booleans & If Statement</title>
+</head>
+<body>
+  <script>
+    const hour = new Date().getHours() ? 'Good morning!' : 'Good afternoon!';
+    let day = hour >= 6 && hour <= 12 ? 'Good morning!' : 'Good afternoon!';
+    console.log(day);
+    const name = 'Justin';
+    // let message = '';
+    // if (hour >= 6 && hour <= 12) {
+    //   message = `Good morning! ${name}`;
+    //   console.log(message);
+    // } else if (hour >= 13 && hour <= 17) {
+    //   message = `Good afternoon! ${name}`;
+    //   console.log(message);
+    // } else {
+    //   message = `Goodnight! ${name}`;
+    //   console.log(message);
+    // }
+
+    const age = 10 <= 6 ? 'You are discount!' : 'You are not qualified to have discount.';
+    const isHoliday = false ? 'You are discount!' : 'You are not qualified to have discount.';
+    console.log(age);
+    // let discount = '';
+    // if ((age <= 6 && age >= 65) || isHoliday) {
+    //   discount = 'You are discount!';
+    //   console.log(discount);
+    // } else {
+    //   discount = 'You are not qualified to have discount.';
+    //   console.log(discount);
+    // }
+  </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Improve Quantity</title>
+</head>
+<body>
+  <h1>Cart Quantity</h1>
+  <button onclick="console.log(`Cart: ${cartQuantity}`)">Show Quantity</button>
+  <button onclick="
+    cartQuantity++;
+    if( cartQuantity >= limit) {
+      alert(`The cart is Full. Your cart: ${cartQuantity}`);
+    }
+    console.log(`Added: ${cartQuantity}`);"
+  >
+  Add to cart
+  </button>
+  <button onclick="
+    cartQuantity += 2;
+    if( cartQuantity === limit) {
+      alert(`The cart is Full. Your cart: ${cartQuantity}`);
+    }
+    console.log(`2 Added: ${cartQuantity}`);  
+  ">+2</button>
+  <button onclick="
+    cartQuantity -= 2;
+    if( cartQuantity >= limit) {
+      alert(`The cart is Full. Your cart: ${cartQuantity}`);
+    } else if (cartQuantity < 0 ) {
+      alert('Not enough items in the cart.');
+    }
+    console.log(`2 has been removed: ${cartQuantity}`);  
+  ">-2</button>
+  <button onclick="
+    cartQuantity = cartQuantity + 3;
+    if( cartQuantity >= limit) {
+      alert(`The cart is Full. Your cart: ${cartQuantity}`);
+    }
+    console.log(`3 Added: ${cartQuantity}`);  
+  ">+3</button>
+  <button onclick="
+    cartQuantity -= 3;
+    if( cartQuantity >= limit) {
+      alert(`The cart is Full. Your cart: ${cartQuantity}`);
+    } else if (cartQuantity < 0 ) {
+      alert('Not enough items in the cart.');
+    }
+    console.log(`3 has been removed: ${cartQuantity}`);  
+  ">-3</button>
+  <button onclick="
+    cartQuantity += 4;
+    if( cartQuantity >= limit) {
+      alert(`The cart is Full. Your cart: ${cartQuantity}`);
+    }
+    console.log(`4 Added: ${cartQuantity}`);
+  ">+4</button>
+  <button onclick="
+    cartQuantity += 5;
+    if( cartQuantity >= limit) {
+      alert(`The cart is Full. Your cart: ${cartQuantity}`);
+    }
+    console.log(`5 Added: ${cartQuantity}`);
+  ">+5</button>
+  <button onclick="
+    cartQuantity--;
+    if (cartQuantity < 0 ) {
+      alert('Not enough items in the cart.');
+    }
+    console.log(`Remove 1 item in Cart: ${cartQuantity}`)
+  ">Remove</button>
+  <button onclick="
+    cartQuantity = 0;
+    console.log(`Your Cart has been reset. : ${cartQuantity}`);
+  ">Reset Cart</button>
+  <script>
+    let cartQuantity = 0;
+    const limit = 10;
+  </script>
+</body>
+</html>
