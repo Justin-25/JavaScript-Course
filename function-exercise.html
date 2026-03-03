@@ -76,21 +76,32 @@
       console.log(`Your Cart has been reset. : ${cartQuantity}`);
     }
 
-    let calculator = '';
+    let calculator = JSON.parse(localStorage.getItem('calculator'));
+
+    if (calculator === null) {
+      calculator = '';
+    }
+
 
     function updateCalculation(number) {
       calculator += number;
       console.log(calculator);
+
+      localStorage.setItem('calculator', JSON.stringify(calculator));
     }
 
     function calculatorPlus(plus) {
       calculator += plus;
       console.log(calculator);
+
+      localStorage.setItem('calculator', JSON.stringify(calculator));
     }
 
     function resultCalculator(result) {
       calculator = eval(calculator);
       console.log(`Total: ${calculator}`);
+
+      localStorage.setItem('calculator', JSON.stringify(calculator));
     }
 
 
