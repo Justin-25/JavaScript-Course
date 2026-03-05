@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Exercise</title>
+</head>
+<body>
+  <button>9a</button>
+  <button class="js-button">9b</button>
+  
+  <button onclick="headsOrTails('heads')">heads</button>
+  <button onclick="headsOrTails('tails')">tails</button>
+  <p class="js-result"></p>
+
+  <input type="text" class="js-submit" placeholder="name" onkeydown="handleNamekeydown(event)">
+  <button onclick="mySubmit()">Submit</button>
+  <p class="js-result-submit"></p>
+
+  <script>
+    const button = document.querySelector('button')
+    const button2 = document.querySelector('.js-button').innerHTML = '9b done!'
+    console.log(button)
+
+    function headsOrTails(pick) {
+      const result = document.querySelector('.js-result');
+
+      if (pick === 'heads') {
+        result.innerHTML = `You choose: ${pick}`;
+      } else if (pick === 'tails') {
+        result.innerHTML = `You choose ${[pick]}`;
+      }
+    }
+
+    function handleNamekeydown(event) {
+      if (event.key === 'Enter') {
+        mySubmit();
+        return;
+      }
+    }
+
+    function mySubmit() {
+      const name = document.querySelector('.js-submit');
+      document.querySelector('.js-result-submit').innerHTML = `Your name is: ${name.value}`
+    }
+  </script>
+</body>
+</html>
