@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Object Model Projects</title>
+</head>
+<body>
+  <h1>YouTube Subscribe Button</h1>
+  <button class="js-button" onclick="subscribeButton()"> Subscribe </button>
+  
+  <h2>Amazon Shipping Calculator</h2>
+  <p>Orders under $40 = +$10 Shipping.</p>
+  <p>Orders over $40 = FREE Shipping.</p>
+  <input type="text" id="price" placeholder="cost of order" onkeydown="handleCostKeydown(event)">
+  <button onclick="priceCalculate()" onkeypress="en">Calculate</button>
+  <p class="calculate-result"></p>
+  <script>
+    function subscribeButton() {
+      const buttonSubs = document.querySelector('.js-button');
+      if (buttonSubs.innerText === 'Subscribe') {
+        buttonSubs.innerHTML = 'Subscribed';
+      } else {
+        buttonSubs.innerHTML = 'Subscribe';
+      }
+    }
+
+    function handleCostKeydown(event) {
+      if (event.key === 'Enter') {
+        priceCalculate();
+        return;
+      }
+    }
+
+    function priceCalculate() {
+      const priceTag = document.querySelector('#price');
+      let cost = Number(priceTag.value); // Whenever we get a value from the DOM, the value will be a string. // Number function takes whatever between the brackets and manually converts it into a number.
+
+ 
+      // .value in input will get the text inside the input box.
+      if (cost < 40) {
+        cost = cost + 10;
+        document.querySelector('.calculate-result').innerHTML = `$${cost}`;
+      } else if (cost >= 40) {
+        document.querySelector('.calculate-result').innerHTML = `You have a Free Shipping. $${cost}`;
+      };
+    }
+
+  </script>
+</body>
+</html>

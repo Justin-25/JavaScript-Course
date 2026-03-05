@@ -150,12 +150,12 @@
           score.tie++
         }
 
-        if(playerMove === 'reset') {
-          score.wins = 0;
-          score.losses = 0;
-          score.tie = 0;
-          return;
-        }
+        // if(playerMove === 'reset') {
+        //   score.wins = 0;
+        //   score.losses = 0;
+        //   score.tie = 0;
+        //   return;
+        // }
 
         // JS object convert to JSON object
         localStorage.setItem('score', JSON.stringify(score));

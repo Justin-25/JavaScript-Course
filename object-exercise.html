@@ -6,7 +6,64 @@
   <title>Object-exercise</title>
 </head>
 <body>
+  <div>
+    <button onclick="playGame('heads')">Heads</button>
+    <button onclick="playGame('tails')">Tails</button>
+  </div>
   <script>
+    //   const random = Math.random();
+    // let result = random < 0.5 ? 'heads' : 'tails';
+    // console.log(result);
+    // // if (random < 0.5) {
+    // //   result = 'heads';
+    // //   console.log(result);
+    // // } else {
+    // //   result = 'tails';
+    // //   console.log(result);
+    // // };
+
+    // // let guess = ('heads' || 'tails');
+    // let guessResult = result === ('heads' || 'tails') ? 'You win' : 'You lose';
+    // console.log(guessResult);
+    // // if (result === guess) {
+    // //   result = `Your guess: ${guess}. You win`;
+    // //   console.log(result);
+    // // } else {
+    // //   result = `Your guess: ${guess}. You lose`;
+    // //   console.log(result);
+    // // }
+
+    let score = JSON.parse(localStorage.getItem('score'));
+
+    if (score === null ) {
+      score = {
+        wins: 0,
+        losses: 0
+      }
+    }
+
+    function playGame(guess) {
+      const random = Math.random();
+      let result = random < 0.5 ? 'heads' : 'tails';
+      
+      if (result === guess) {
+        score.wins++;
+        console.log(`Your guess: ${guess}, You win. \nScore: Win: ${score.wins} Losses: ${score.losses}`);
+      } else {
+        score.losses++
+        console.log(`Your guess: ${guess}, You lose. \nScore: Win: ${score.wins} Losses: ${score.losses}`)
+      }
+
+      localStorage.setItem('score', JSON.stringify(score));
+    }
+
+
+
+
+
+
+
+
     const product = {
       basketball: 2095,
       delivery_time: '3 days'
@@ -51,7 +108,6 @@
     const string = ' Good Morning';
 
     console.log(string.toLowerCase().repeat(5));
-
   </script>
 </body>
 </html>
