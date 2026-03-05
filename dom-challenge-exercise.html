@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document Object Model Projects</title>
+  <title>DOM challenge</title>
 </head>
 <body>
   <h1>YouTube Subscribe Button</h1>
@@ -15,7 +15,15 @@
   <input type="text" id="price" placeholder="cost of order" onkeydown="handleCostKeydown(event)">
   <button onclick="priceCalculate()">Calculate</button>
   <p class="calculate-result"></p>
+  <input type="text" placeholder="Input any..." onkeyup="handleInputKeydown(event)">
+  <p class="js-result-input"></p>
   <script>
+    function handleInputKeydown(event) {
+      const key = event.target;
+        document.querySelector('.js-result-input').innerHTML = key.value;
+    }
+
+
     function subscribeButton() {
       const buttonSubs = document.querySelector('.js-button');
       if (buttonSubs.innerText === 'Subscribe') {
@@ -38,9 +46,9 @@
       // .value in input will get the text inside the input box.
       if (cost < 40) {
         cost = cost + 10;
-        document.querySelector('.calculate-result').innerHTML = `$${cost}`;
+        document.querySelector('.calculate-result').innerHTML = `$${cost.toFixed(2)}`;
       } else if (cost >= 40) {
-        document.querySelector('.calculate-result').innerHTML = `You have a Free Shipping. $${cost}`;
+        document.querySelector('.calculate-result').innerHTML = `You have a Free Shipping. $${cost.toFixed(2)}`;
       };
     }
 
