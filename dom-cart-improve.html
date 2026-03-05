@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Cart Improve</title>
+</head>
+<body>
+    <h1>Cart Quantity</h1>
+  <button onclick="showQTY()">Show Quantity</button>
+  <button onclick="updateCartQuantity(1)">Add to cart</button>
+  <button onclick="updateCartQuantity(2)">+2</button>
+  <button onclick="updateCartQuantity(3)">+3</button>
+  <button onclick="updateCartQuantity(4)">+4</button>
+  <button onclick="updateCartQuantity(5)">+5</button>
+  <button onclick="removeCartQuantity(1)">Remove</button>
+  <button onclick="removeCartQuantity(2)">-2</button>
+  <button onclick="removeCartQuantity(3)">-3</button>
+  <p class="js-result-cart"></p>
+
+  <script>
+    
+    let cartQuantity = 0;
+    const limit = 10;
+
+    function showQTY() {
+      document.querySelector('.js-result-cart').innerHTML = `Cart quantity: ${cartQuantity}`
+    }
+
+    function updateCartQuantity(cart) {
+      const qty = cartQuantity + cart; 
+      if ( qty > limit) {
+        alert(`The cart is Full.`);
+        return;
+      }
+      cartQuantity = qty;
+      showQTY()
+    }
+
+    function removeCartQuantity(minus) {
+      const remove = cartQuantity - minus;
+      if ( remove < 0 ) {
+        alert('Not enough items in the cart.');
+        return;
+      }
+      cartQuantity = remove;
+      showQTY()
+    }
+
+    function resetCartQuantity(reset) {
+      const zero = cartQuantity = 0;
+      if ( zero < 0 ) {
+        alert('Not enough items in the cart.');
+        return;
+      }
+      cartQuantity = zero;
+      showQTY()
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM calculator improve</title>
+</head>
+<body>
+
+  <button onclick="updateCalculation('1')">1</button>
+  <button onclick="updateCalculation('2')">2</button>
+  <button onclick="updateCalculation('3')">3</button>
+  <button onclick="calculatorPlus('+')">+</button>
+  <button onclick="resultCalculator('=')">=</button>
+  <p class="js-result-calculator"></p>
+
+  <script>
+    //  let calculator = JSON.parse(localStorage.getItem('calculator'));
+
+    // if (calculator === null) {
+    //   calculator = '';
+    // }
+
+    let calculator = '';
+    
+    function showResult() {
+      document.querySelector('.js-result-calculator').innerHTML = `${calculator}`;
+    }
+
+    function updateCalculation(number) {
+      calculator += number;
+      showResult();
+
+      // localStorage.setItem('calculator', JSON.stringify(calculator));
+    }
+
+    function calculatorPlus(plus) {
+      calculator += plus;
+      showResult();
+
+      // localStorage.setItem('calculator', JSON.stringify(calculator));
+    }
+
+    function resultCalculator(result) {
+      calculator = eval(calculator);
+      showResult();
+
+      // localStorage.setItem('calculator', JSON.stringify(calculator));
+    }
+
+  </script>
+</body>
+</html>
