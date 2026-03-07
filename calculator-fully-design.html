@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style/calculator.css">
+  <title>DOM calculator final</title>
+</head>
+<body>
+
+  <div class="calc-container">
+    <div class="number">
+      <button onclick="calculatorNum('1')">1</button>
+      <button onclick="calculatorNum('2')">2</button>
+      <button onclick="calculatorNum('3')">3</button>
+      <button onclick="calculatorNum('4')">4</button>
+      <button onclick="calculatorNum('5')">5</button>
+      <button onclick="calculatorNum('6')">6</button>
+      <button onclick="calculatorNum('7')">7</button>
+      <button onclick="calculatorNum('8')">8</button>
+      <button onclick="calculatorNum('9')">9</button>
+      <button onclick="calculatorNum('0')">0</button>
+      <button onclick="calculatorPoint('.')">.</button>
+      <button onclick="resultCalc('=')">=</button>
+      <button onclick="removeCalc('clear')">clear</button>
+    </div>
+    <div class="condition">
+      <button onclick="plusCalculator('+')">+</button>
+      <button onclick="minusCalculator('-')">-</button>
+      <button onclick="timesCalculator('*')">*</button>
+      <button onclick="devideCalculator('/')">/</button>
+    </div>
+  </div>
+  <p class="js-result"></p>
+
+  <script src="/scripts/calc.js"></script>
+</body>
+</html>

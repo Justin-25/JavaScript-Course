@@ -12,6 +12,12 @@
   <button class="toggled" onclick="istoggled(this)">Music</button>
   <button class="toggled" onclick="istoggled(this)">Tech</button>
 
+  <h2>Amazon Shipping Calculator</h2>
+  <p>Orders under $40 = +$10 Shipping.</p>
+  <p>Orders over $40 = FREE Shipping.</p>
+  <input type="text" id="price" placeholder="cost of order" onkeydown="handleCostKeydown(event)">
+  <button onclick="priceCalculate()">Calculate</button>
+  <p class="calculate-result"></p>
 
   <script src="scripts/index.js"></script>
 </body>

@@ -1,0 +1,45 @@
+body {
+  background-color: #000;
+}
+
+.calc-container {
+  display: flex;
+}
+
+.number {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.calc-container button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  background-color:#333333;
+  border: none;
+  color: #fff;
+  margin: 5px;
+}
+
+.condition {
+  display: flex;
+  flex-direction: column;
+  margin: 2px;
+  gap: 3px;
+}
+
+.condition button {
+  background-color: #fea00a;
+  border: none;
+}
+
+.js-result {
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+}

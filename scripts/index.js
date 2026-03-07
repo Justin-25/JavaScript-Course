@@ -44,3 +44,28 @@ function isTechToggled() {
     techToggle.classList.add('tech-toggled');
   }
 }
+
+function handleCostKeydown(event) {
+  if (event.key === 'Enter') {
+    priceCalculate();
+    return;
+  }
+}
+
+function priceCalculate() {
+  const priceTag = document.querySelector('#price');
+  let cost = Number(priceTag.value); // Whenever we get a value from the DOM, the value will be a string. // Number function takes whatever between the brackets and manually converts it into a number.
+  // .value in input will get the text inside the input box.
+  const result = document.querySelector('.calculate-result');
+  if (cost < 0) {
+    result.innerHTML = `Error: cost cannot be less than $0`;
+    result.style.color = 'red';
+  } else if (cost >= 40) {
+    const total = cost.toFixed(2);
+    result.innerHTML = `You have a Free Shipping. $${total}`;
+  } else if ( cost < 40) {
+    cost = cost + 10;
+    const total = cost.toFixed(2);
+    result.innerHTML = `$${total}`;
+  }
+}
