@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays and Loops</title>
+</head>
+<body>
+  <script>
+    /* 
+    // Arrays = another type of value, reperesents a list of values
+      Arrays themeselves are also values which means we can save them in a variable
+      Array = list of values
+      To get a specifc value in an array '=> []'
+      Arrays works, we can access a value inside an array, we can also changed a value inside an array
+
+    // Syntax Rules of an Array
+      to create an array we start with an squere bracket and we end an squere bracket. Inside we can put a list of value and we separate each value with a comma.
+      To get a value inside an array we can use a square bracket and a number like 1. This number is called the index, it represent the position in the array that we want to get.
+      index start at zero this is called a 'Zero indexed array'
+      Inside an array we can put any type of value
+      An array istself is also a value
+      An array is an object (it's a special type of object)
+
+    // Arrays have properties and methods
+      .length
+      .push() - adds a value to the end of the array
+      .splice() - removes a value from an array / 1. Index we want to remove / 2. Number of values to remove
+
+    // Loops - let us run some code over and over
+    let i = 1 // first we create a variable i and we make it equal to one
+    while // Thi si called 'While Loop' (i <= 5) // if this code results in 'True' the loop will keep going over and over, once this results in 'False' the loop will stop and it will go to the next line
+    {
+      console.log(i); // this will display the variable in the console over and over
+      i = i + 1; // this is known increment step
+    }
+
+    // Syntax Rules to create a While loop
+    We type a word 'while', and then () and {}
+    the code inside round brackets '()' is called loop condition
+    the code inside curly brackets '{}' is called loop body
+    the variable at the top 'let i = 1' is called loop variable
+    i = i + 1; // this is known increment step, make sure that the loop ends at some point, without this increment step 'The loop will go forever'
+
+    // loops create a scope
+    any variable that we create between these curly bracket will only exist inside curly brackets
+
+    // Theres 2 types of loops
+    first type is a 'while loop'
+    second type is a 'for loop'
+    for (let i = 0 // loop variable; i <= 5 // loop condition; i++ // increment step) {
+     
+    // While vs For Loop
+    - Standard loop => for 
+    which one should we use if were doing a standard loop, if it has a loop variable, a condition and an increment step every time, it's recommended to use a 'for loop'
+    for loop is a shorter and more organized than a while loop. if it's a nonstandard loop then it might be better to use a while loop.
+    - Non-standard loop => while
+    when we have a non standard loop it is better to use a while loop, because theyre a bit more flexible.
+
+    // Looping Through an Array
+    1. Go through each value of an array one by one
+    2. Do something with each value
+    i = index
+
+    // Accumulator Pattern
+    1. Create a variable to store the result.
+    2. Loop through the array and update the result.
+
+    // Main idea of JavaScript / When creating website with JavaScript we usually follow a 3 step process
+    1. Save the data / we saved our data as an array const todos = [];
+    2. Generate the HTML 
+        let listTodo = '';
+
+        const inputElement = document.querySelector('#todoList');
+        const myTodoList = inputElement.value;
+
+        todoList.push(myTodoList);
+        inputElement.value = '';
+
+        for (let i = 0; i < todoList.length; i++) {
+          const value = todoList[i];
+          const pHtml = `<p>${value}</p>`; // Generating the HTML
+          listTodo += pHtml;
+
+          document.querySelector('.js-result-todoList').innerHTML = listTodo;
+        }
+    3. Make it interactive
+    */
+
+    const myArray = [10, 20, 30];
+    console.log(myArray);
+    console.log(myArray[1])
+
+    myArray[0] = 99;
+    console.log(myArray);
+
+    [1, 'hello', true, {name: 'socks'}]
+    console.log(typeof [1, 2]);
+    console.log(Array.isArray([1, 2]));
+
+    console.log(myArray.length);
+
+    myArray.push(200);
+    console.log(myArray);
+
+    myArray.splice(0, 1);
+    console.log(myArray);
+
+    let i = 1;
+
+    while (i <= 5) // if this code results in 'True' the loop will keep going over and over, once this results in 'False' the loop will stop and it will go to the next line
+    {
+      console.log(i); // this will display the variable in the console over and over
+      // i = i + 1;
+      i++
+    } // each time we run this loop, this is called an iteration, so in this loop we did five iteration
+
+    for (let i = 1; i <= 5; i++) {
+      console.log(i);
+    }
+
+    // example of a non-standard loop
+    // generate random numbers until one that's at least 0.5.
+    let random = 0;
+    
+    while (random < 0.5) {
+      random = Math.random();
+    }
+    console.log(random)
+
+    // Looping Through an Array
+    const todoList = [
+      'make dinner',
+      'washing dishes',
+      'watch Youtube'
+    ];
+
+    for (let i = 0; i < todoList.length; i++) {
+      const value = todoList[i];
+      console.log(value);
+    } 
+
+    // Accumulator Pattern
+    // We have an array of numbers [1, 2, 3]
+    // How do we calculate the total?
+    const number = [
+      1,
+      1,
+      3
+    ];
+
+    let numsResult = 0; // Accumulator Variable
+
+    for (let i = 0; i < number.length; i++) {
+       const nums = number[i];
+       numsResult += nums;
+    }
+
+    console.log(numsResult)
+
+    const numsDoubled = []; // We can use different types of values to accumulate the result
+
+    for (let i = 0; i < number.length; i++) {
+      const num = number[i];
+
+      numsDoubled.push(num * 2);
+    }
+
+    console.log(numsDoubled);
+  </script>
+</body>
+</html>
