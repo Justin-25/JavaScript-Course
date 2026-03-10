@@ -31,7 +31,7 @@ console.log(minMax([3]));
 
 
 function countWords(words) {
-  const variableObject = {}; // We create an empty object
+  const variableObject = [{}]; // We create an empty object
 
   for (let i = 0; i < words.length; i++) {
     if (variableObject[words[i]] === undefined) {

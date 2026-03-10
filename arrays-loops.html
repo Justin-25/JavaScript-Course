@@ -85,6 +85,14 @@
           document.querySelector('.js-result-todoList').innerHTML = listTodo;
         }
     3. Make it interactive
+
+    // More details about arrays and loops
+    Arrays are References same with objects
+    .slice() - this will make a copy of the values in 'arrayOne', now the two variables point to two different arrays.
+    Shortcut: Destructuring
+    Get the first and second value of this array
+    const firstValue = array3[0];
+    const secondValue = array3[1];
     */
 
     const myArray = [10, 20, 30];
@@ -167,6 +175,121 @@
     }
 
     console.log(numsDoubled);
+
+    const array1 = [1, 2, 3]; // both of these point to the same array in memory
+    const array2 = array1; // both of these point to the same array in memory
+    array2.push(4);
+    console.log(array2);
+    console.log(array1);
+
+    // To avoid the behavior to point in same array in memory, we can create a copy of the values in the array using a method called '.slice()'. 
+    const arrayOne = [1, 2, 3];
+    const arrayTwo = arrayOne.slice(); // this will make a copy of the values in 'arrayOne', 
+    arrayTwo.push(4);
+    console.log(arrayOne);
+    console.log(arrayTwo);
+
+    // Get the first and second value of this array
+    // Shortcut: Destructuring 
+    const [firstValue, secondValue, thirdValue] = [1, 2, 3]
+
+    // More details about loops
+    // 1. break
+    // 2. continue
+
+    // 1. break = exit a loop early
+    // When i = 8, stop this loop early
+    for (let i = 1; i <= 10; i++) {
+      console.log(i);
+      if (i === 8) {
+        break;
+      }
+    }
+
+    // 2. continue = skip 1 iteration of the loop or one run of the loop
+    // Skip the number 3
+    for (let i = 1; i <= 10; i++) {
+      if (i === 3) {
+        continue;
+      }
+      console.log(i);
+      if (i === 8) {
+        break;
+      }
+    }
+
+    // Skip a number if its divisible by 3
+    // divisible by 3 = can be devided evenly into 3
+    // remainder '%' 7 % 3 => 1 / 3 % 3 => 0
+    // * Remember the increment step is done automatically after every iteration
+    for (let i = 1; i <= 10; i++) {
+      if (i % 3 === 0) {
+        continue;
+      }
+      console.log(i);
+      if (i === 8) {
+        break;
+      }
+    }
+
+    // Count 1 to 10 using while loop
+    let index = 1;
+
+    while (index <= 10) {
+      console.log(index);
+      index++;
+    }
+
+    // Skip numbers that are divisble by 3 (3, 6, 9) 
+    // * Remember in a while loop if we use continue always do the incerement step manually
+    let index2 = 1;
+
+    while (index2 <= 10) {
+      if (index2 % 3 === 0) {
+        index2++;
+        continue;
+      }
+      console.log(index2)
+      index2++;
+    }
+
+
+    // How to use loop with functions
+    // Lets say we have an array of numbers [1, 2, 3] and we want to create a copy of this array where each numbers is doubled.
+    function numberDoubled(nums) {
+      const numDoubled = [];
+
+      for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+
+        numDoubled.push(num * 2);
+      }
+
+      return numDoubled;
+    }
+
+    console.log(numberDoubled([1, 2, 3]));
+    console.log(numberDoubled([2, 4, 5]));
+
+    // If we set the number 0, stop this loop early
+    function numbDoubled(nums) {
+      const numDoubled = [];
+
+      for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+        if (num === 0) {
+          // break; / we can break out of this loop
+          return numDoubled; // when were inside a function we can also use a return statement to break out of this loop.
+          // A return statement will end this function immediately
+        }
+        numDoubled.push(num * 2);
+      }
+
+      return numDoubled;
+    }
+
+    console.log(numbDoubled([1, 2, 3, 5, 0, 10]));
+    console.log(numbDoubled([2, 4, 5, 0, 9]));
   </script>
 </body>
 </html>
