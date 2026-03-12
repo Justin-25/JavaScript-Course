@@ -1,7 +1,12 @@
-const todos = [{
-  name: 'washing dishes',
-  dueDate: '2026-01-20'
-}]; // Empty array
+
+let todos = JSON.parse(localStorage.getItem('todos'));
+
+if (todos === null) {
+  todos = [{
+    name: 'washing dishes',
+    dueDate: '2026-01-20'
+  }];
+}
 
 removeTodoList();
 
@@ -38,8 +43,10 @@ function removeTodoList() {
       `; // Generating the HTML
     todoListHtml += generateHtml;
   }
-    console.log(todoListHtml);
+  console.log(todoListHtml);
   document.querySelector('.js-result-todoList').innerHTML = todoListHtml;
+
+  localStorage.setItem('todos', JSON.stringify(todos));
 }
 
 function addTodoList() {
@@ -59,4 +66,6 @@ function addTodoList() {
   todosDate.value = '';
 
   removeTodoList();
+
+  localStorage.setItem('todos', JSON.stringify(todos));
 }
