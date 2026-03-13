@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advance Function</title>
+</head>
+<body>
+  <script>
+
+    // FUNCTION SYNTAX
+    // ADVANTAGES:
+    // EASIER TO READ
+    // HOISTING
+
+    greeting(); // HOISTING - WE CAN CALL THIS FUNCTION BEFORE WE CREATE IT IN THE CODE. HOISTING DOESN'T WORK WHEN WE CREATE OUR FUNCTION AND SAVE IT IN A VARIABLE
+    function greeting() {
+      console.log('Hello');
+    }
+
+    // THIS IS KNOWN AS 'CALLING THE FUNCTION'
+    greeting(); // THIS LINE OF CODE WELL RUN THE CODE INSIDE THE FUNCTION AND DISPLAY IT.
+
+    // FUNCTIONS ARE VALUES
+    // TYPE OF VALUES
+    // numbers, string, booleans
+    const num = 2;
+
+    // FUNCTIONS ARE ALSO VALUES
+    // - WE CAN SAVE IT A FUNCTION INSIDE A VARIABLE
+    // const function1 = function greeting() {
+    //   console.log('Hello2');
+    // };
+
+    // ANONYMOUS FUNCTION
+    // FUNCTION WITHOUT A NAME
+    const function1 = function () {
+      console.log('Hello2');
+    };
+    console.log(function1); // THIS WILL SHOW US THAT THE VARIABLE FUNCTIO1 ACTUALLY CONTAINS THE FUNCTION INSIDE VARIABLE
+    console.log(typeof function1);
+    function1(); // THIS WILL RUN THE CODE INSIDE OF FUNCTION
+
+    // WHAT ELSE CAN WE DO WITH A VALUE?
+    // - SAVE A VALUE IN AN OBJECT
+    const object1 = {
+      num: 2,
+      // THIS IS CALLED METHOD
+      // - WHEN WE HAVE A FUNCTION SAVED INSIDE AN OBJECT
+      fun: function () {
+        console.log('Hello3');
+      }
+    }
+
+    object1.fun(); // SINCE THIS VALUE IS A FUNCTION WE CAN CALL IT USING '()', THIS WILL RUN THE CODE INSIDE THE FUNCTION AND DISPLAY 'HELLO3'.
+
+    // WHAT ELSE CAN WE DO WITH A VALUE?
+    // - PASS A VALUE INTO A FUNCTION
+    function display(param) {
+      console.log(param);
+    };
+
+    // THIS IS KNOWN A VALUE PASSING INTO A FUNCTION
+    display(2); // THIS WILL TAKE THE VALUE 2, SAVE IT INSIDE PARAM AND THEN WE CAN USE IT JUST LIKE A VARIABLE.
+
+    // WE CAN ALSO PASS A FUNCTION INTO A FUNCTION
+    // PASSING A FUNCTION INTO ANOTHER FUNCTION
+    function run(param) {
+      // SINCE PARAM CONTAINS A FUNCTION WE CAN ACTUALLY JUST CALL IT USING ROUND BRACKETS.
+      param(); // WE CAN USE 'param' JUST LIKE A VARIABLE, THIS CODE WILL RUN THE FUNCTION THAT WE CREATED DOWN HERE AND DISPLAY 'Hello4'.
+    };
+
+    // THIS WILL TAKE THIS FUNCTION AND SAVE IT INSIDE 'param' 
+    // THE FUNCTION THAT WE'RE PASSING IN IS CALLED A 'CALLBACK FUNCTION or CALLBACK'
+    run(function () {
+      console.log('Hello4');
+    })
+
+    // setTimeout()
+    // - allows us to run a function in the future
+    // setTimeout() - takes two parameter inside these brackets
+    // 1. A FUNCTION WE WANT TO RUN IN THE FUTURE\
+    // 2. HOW LONG TO WAIT BEFORE RUNNING THIS FUNCTION
+      // - (a number in milliseconds) 1000 milliseconds = 1 second
+    // ADVANTAGE OF BEING ASYNCHRONOUS
+    // - IT DOESN'T BLOCK OUR CODE FOR 3 SECONDS
+    setTimeout(function () {
+      console.log('timeout');
+    }, 3000); // IS A BUILT-IN FUNCTION, SO WE CAN TYPE BRACKETS TO CALL THIS FUNCTION
+
+    // ASYNCHRONOUS CODE
+    // COMPUTER WON'T WAIT FOR A LINE TO FINISH BEFORE GOING TO THE NEXT LINE
+    console.log('next line');
+
+    // SYNCHRONOUS CODE
+    // COMPUTER WILL WAIT FOR ONE LINE TO FINISH BEFORE GOING TO THE NEXT LINE
+    setTimeout(function () {
+      console.log('timeout');
+      console.log('timeout2');
+    }, 3000); // IS A BUILT-IN FUNCTION, SO WE CAN TYPE BRACKETS TO CALL THIS FUNCTION
+
+    // setInterval();
+    // - returns a number
+    // - we can use it to stop the interval
+    // A FUNCTION WE WANT TO RUN IN THE FUTURE
+    // A NUMBER IN MILLISECONDS
+    // IT WILL KEEP RUNNING THE FUNCTION EVERY 3 SECONDS
+    setInterval(function () {
+      console.log('interval');
+    }, 3000); // IS A BUILT-IN FUNCTION, SO WE CAN TYPE BRACKETS TO CALL THIS FUNCTION
+
+    console.log('next line 2'); // it will set up the interval and then immediateley go to the next line and display next line 2
+
+    // ANOTHER WAY TO LOOP THROUGH AN ARRAY
+    // .forEach() - is the preferred way to loop through an array
+    // SO WHAT forEach() DOES IS THAT IT LOOPS THROUGH AN THE ARRAY AND FOR EACH OF THESE VALUES IT WILL SAVE THE VALUE IN THE PARAMETER AND RUN THE FUNCTION.
+    // second parameter is the 'index' or the position of the value in the array.
+    [
+      'make dinner', // it'll take the first value save it in this parameter and run the function, first value will be zero.
+      'wash dishes', // then it will take the second value save it in this parameter and run the function, second value will be one.
+      'watch youtube'// then it will take the third value save it in this parameter and run the function, third value will be two.
+    ].forEach(function (value, index) {
+      // IF VALUE IS 'WASH DISHES', WERE GOING TO SKIP IT
+      if (value === 'wash dishes') {
+        // Does the same thing as continue in a for loop.
+        return; // this return statement will end this function early and it will go on to the next function
+      }
+      // PASSING A FUNCTION INTO ANOTHER FUNCTION
+      console.log(index);
+      console.log(value);
+    }); // THIS IS THE 'forEach()' METHOD IT ALLOWS US TO LOOP THROUGH THIS ARRAY.
+
+    // IF WE NEED TO USE 'break;'
+    // THEN IT'S BETTER TO USE A REGULAR FOR LOOP.
+  </script>
+</body>
+</html>
