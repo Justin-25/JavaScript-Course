@@ -14,9 +14,10 @@
     // HOISTING
 
     greeting(); // HOISTING - WE CAN CALL THIS FUNCTION BEFORE WE CREATE IT IN THE CODE. HOISTING DOESN'T WORK WHEN WE CREATE OUR FUNCTION AND SAVE IT IN A VARIABLE
+    
     function greeting() {
       console.log('Hello');
-    }
+    };
 
     // THIS IS KNOWN AS 'CALLING THE FUNCTION'
     greeting(); // THIS LINE OF CODE WELL RUN THE CODE INSIDE THE FUNCTION AND DISPLAY IT.
@@ -27,7 +28,7 @@
     const num = 2;
 
     // FUNCTIONS ARE ALSO VALUES
-    // - WE CAN SAVE IT A FUNCTION INSIDE A VARIABLE
+    // - WE CAN SAVE A FUNCTION INSIDE A VARIABLE
     // const function1 = function greeting() {
     //   console.log('Hello2');
     // };
@@ -37,7 +38,7 @@
     const function1 = function () {
       console.log('Hello2');
     };
-    console.log(function1); // THIS WILL SHOW US THAT THE VARIABLE FUNCTIO1 ACTUALLY CONTAINS THE FUNCTION INSIDE VARIABLE
+    console.log(function1); // THIS WILL SHOW US THAT THE VARIABLE FUNCTION1 ACTUALLY CONTAINS THE FUNCTION INSIDE VARIABLE
     console.log(typeof function1);
     function1(); // THIS WILL RUN THE CODE INSIDE OF FUNCTION
 
