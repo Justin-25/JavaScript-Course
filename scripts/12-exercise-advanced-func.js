@@ -1,4 +1,4 @@
-const add = function () {
+const add = () => {
   console.log(2 + 3);
 }
 
@@ -10,17 +10,27 @@ function runTwice(fun) {
   fun();
 }
 
-runTwice(function () {
+runTwice( () => {
   console.log('12b');
 });
+
+document.querySelector('.js-button-finished')
+  .addEventListener('click', () => {
+    finishedButton();
+  })
 
 function finishedButton() {
   document.querySelector('.js-button').innerText = 'Loading...';
 
-    setTimeout(function () {
+    setTimeout(() => {
       document.querySelector('.js-button').innerHTML = 'Finished!' 
     }, 1000)
 }
+
+document.querySelector('.js-add-cart')
+  .addEventListener('click', () => {
+    addCart();
+  })
 
 let timerId;
 
@@ -29,16 +39,26 @@ function addCart() {
     message.innerHTML = `<p>Added!</p>`;
     
     if (timerId === undefined) {
-      timerId = setTimeout(function () {
+      timerId = setTimeout(() => {
         message.innerHTML = '';
       }, 2000);
     } else {
       clearTimeout(timerId);
-      timerId = setTimeout(function () {
+      timerId = setTimeout(() => {
         message.innerHTML = '';
       }, 2000);
     }
 }
+
+document.querySelector('.js-add')
+  .addEventListener('click', () => {
+    appMessages('add');
+  })
+
+document.querySelector('.js-remove')
+  .addEventListener('click', () => {
+    appMessages('remove');
+  })
 
 let messages = 2;
 let showMessage = true;
@@ -50,7 +70,7 @@ function appMessages(message) {
     messages--
   }
 
-  setInterval(function () {
+  setInterval(() => {
     if (messages > 0) {
       if (showMessage) {
         document.title = `(${messages}) New messages`;
