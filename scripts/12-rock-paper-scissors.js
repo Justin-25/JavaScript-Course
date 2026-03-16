@@ -17,7 +17,7 @@
     // Auto PLay
     function autoPLay() {
       if (!isAutoPlaying) {
-        intervalId = setInterval(function () {
+        intervalId = setInterval( () => {
           const playerPick = pickMove();
           playerMove(playerPick);
         }, 1000);
@@ -28,6 +28,31 @@
         isAutoPlaying = false;
       }
     }
+
+    document.querySelector('.js-button-rock')
+      .addEventListener('click', () => {
+        playerMove('rock');
+      });
+
+    document.querySelector('.js-button-paper')
+      .addEventListener('click', () => {
+        playerMove('paper');
+      });
+    
+    document.querySelector('.js-button-scissors')
+      .addEventListener('click', () => {
+        playerMove('scissors');
+      });
+
+    document.body.addEventListener('keydown', (event) => {
+      if (event.key === 'r') {
+        playerMove('rock');
+      } else if (event.key === 'p') {
+        playerMove('paper');
+      } else if (event.key === 's') {
+        playerMove('scissors');
+      };
+    });
 
     // PLayer move
     function playerMove(move) {

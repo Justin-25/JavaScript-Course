@@ -10,13 +10,10 @@ if (todos === null) {
 
 removeTodoList();
 
-
-// const todoList = [];
-
 function removeTodoList() {
   let todoListHtml = '';
 
-  todos.forEach(function (valueObject, index) {
+  todos.forEach((valueObject, index) => {
     const {
       name,
       dueDate // Shorthand Property
@@ -24,10 +21,7 @@ function removeTodoList() {
     const generateHtml = `
       <div class="todoList">${name}</div>
       <div class="todoList">${dueDate}</div>
-      <button class="delete" onclick="
-        todos.splice(${index}, 1);
-        removeTodoList();
-        ">Delete</button>  
+      <button class="delete js-delete-list">Delete</button>  
       `; // Generating the HTML
     todoListHtml += generateHtml;
   })
@@ -35,8 +29,23 @@ function removeTodoList() {
   console.log(todoListHtml);
   document.querySelector('.js-result-todoList').innerHTML = todoListHtml;
 
+
+  // We used querySelectorAll to get a list of all the delete buttons on the page and then we loop through the list, using forEach() and for each delete button we added a click event listener
+  document.querySelectorAll('.js-delete-list')
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener('click', () => {
+        todos.splice(index, 1)
+        removeTodoList();
+      })
+    })
+
   localStorage.setItem('todos', JSON.stringify(todos));
 }
+
+document.querySelector('.js-add-button')
+  .addEventListener('click', () => {
+    addTodoList();
+  })
 
 function addTodoList() {
   const todosName = document.querySelector('#name');
