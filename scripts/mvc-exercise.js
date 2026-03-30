@@ -1,4 +1,5 @@
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+import isSatSun from './importFile.js';
 
 // const date = dayjs();
 // const todayDate = date.add(
@@ -9,12 +10,4 @@ import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 // console.log(dateFormat)
 
 
-const todayDate = {
-  method: dayjs().format('dddd')
-}
-
-function isWeekend(date) {
-
-}
-
-console.log(isWeekend(6));
+console.log(isSatSun(dayjs('2026-04-10')));
