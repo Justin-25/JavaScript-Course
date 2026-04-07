@@ -495,6 +495,68 @@
   // Class let's us create private properties and methods,
   // this is useful on a bigger project, 
   // where which properties and methods are supposed to use outside the class and which one to avoid.
+
+  // Inheritance
+  // lets us reuse code between classes
+  // We use inheritance when we have One class is a more specific type of another class
+  // super() - basically calls the Constructor of the Parent class
+  // type: "clothing" = so type tells us which class we should use when we're converting into class, 
+  // this is sometimes called a discriminator property
+  
+  // Polymorphism
+  // - use a method without knowing the class
+  // polymorphism is sort of like an alternative to doing if statement / ternary
+  // If-statement / Ternary operator
+  // ${
+  //   product instanceof Clothing
+  //     ? `<a href="${product.sizeChartLink}">Size Chart</a>` : ''
+  // };
+  // Polymorphism
+  // we can just have both of the classes use the same method
+  // The class wil determine what this method does
+  // ${product.extraInfoHTML()}
+  // if we add a new class
+  // class Appliance extends Products {
+      // ...
+      // extraInfoHTML() {
+      //   // Download instructions.
+      // }
+  // }
+  // we don't need to change this code - ${product.extraInfoHTML()}
+
+  // Built-in classes
+  // - classes that are provided by the language
+  // new Date() - generates an object that represent the current date
+  // .toLocalTimeString() - gives the current time
+
+  // this
+  // - lets an object access its own properties
+  // - can be used anywhere in our code
+  // - use "this" inside a function
+  // - Inside a function, we can change "this" to whatever we want
+  // .call()
+  // - Arrow functions do not change the value of "this"
+  // "this" keeps the value that it had outside the arrow function
+  // Inside a regular function, this = undefined
+
+  // Summary of "this"
+  // const object3 = {
+  //   method: () => {
+  //     console.log(this /* undfined */ ); // "this" will have the same value as outside the arrow function
+  //   }
+  // } - Inside a method, "this" points to the outer object
+  // function logThis() {
+  //   console.log(this);
+  // } - Inside a function "this = undefined"
+  // logThis.call('Hello'); But we can change it to whatever we want using something like .call()
+  // console.log(this);
+  // [1, 2, 3].forEach(() => {
+  //   console.log(this);
+  // }) - Arrow functions, do not change the value of "this"
+  // 1. If there's an object to point to, this will point to that object
+  // 2. If there's no object to point to, this will be undefined,
+  // and we have tools like .call() and arrow functions to kind of manipulate the value of "this" to be what we want
+  // the more that you work with it the more you just get used to it
   </script>
 </body>
 </html>
