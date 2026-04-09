@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documents for Front-End and Backend</title>
+</head>
+<body>
+  <!-- 
+  // Front-End
+
+  // Feature of fucntions called a Closure
+  // Closure
+  // - if a function has access to a value
+  // - it will always have access to that value
+  // - the value gets packaged together (enclosed) with the function
+
+  // MAIN IDEA OF JAVASCRIPT
+  // 1. Save the data
+  // 2. Generate the HTML
+  // 3. Make it interactive
+
+  // data = information
+  // (information about our products)
+  // object = group multiple values together
+  
+  // The Benefit of Generating the HTML
+  // We don't have to copy paste all of the html again
+  
+
+  // How do we know which product to add?
+  // Data Attribute
+  // -is just another HTML attribute
+  // -allows us to attach any information to an element
+
+  // Syntax for a Data Attribute
+  // -is just an HTML attribute, that means it follows the same syntax rule (data-product-name="${product.name}")
+  // We have an attribute name on the left and an attribute value on the right
+  // have to start with "data-"
+  // then give it any name we want like "product-name" but we have to make sure to separate the words with a dash, this is also known (kebab-case)\
+
+  // dataset property basically gives us all the data attributes that are attached to the button
+  // External Libraries = code that is outside of our project
+  // Why we use external libraries
+  // - let us share code
+  // - save time
+  // - avoid duplicating work
+  
+  // Best Practice
+  // When we need something complicated
+  // - Try to find external library first.
+  // - Before writing the code ourselves.
+  
+  // ESM Version
+  // ESM = EcmaScript Module (EcmaScript = JavaScript)
+  // A version that works with JavaScript Module
+
+  // Default Export 
+  // - another way of exporting
+  // - we can use it when we only want to export 1 thing
+
+  // MVC - MODEL - VIEW - CONTROLLER
+  // 1. Update the data
+  // 2. Regenerate all the HTML
+
+  // MVC = make sure the page always matches the data
+  // Split our code into 3 parts
+  // 1. Model = saves and manages the data
+  // 2. View = takes the data and displays it on the page
+  // 3. Controller = runs some code when we interact with the page
+  // MVC is a design pattern
+
+  // Disadvantages of Manual Testing
+  // 1, Hard to test every situation
+  // 2. Hard to re-test
+
+  // Automated Testing
+  // - using code to test code
+  // situation = test case
+
+  // 2 Type of Test Cases
+  // 1. Basic test cases
+  //  - tests if the code is working
+  // 2. Edge cases
+  //  - test with values that are tricky
+
+  // Naming convention that we use 
+  // - is to discribe what the code is doing.
+  // the code/ - works with 0
+  // Group of related tests = test suite 
+
+  // Testing Framework
+  // - external library that help us write tests easier
+  // Most testing frameworks are similar.
+  // Jasmine for Js
+  // Jest (for ReactJs)
+  // MochaJS
+
+  // spec = test
+  // Best Practice
+  // Test each comdition of an if-statement
+  // Test Coverage
+  // - how much of the code is being tested
+  // (Try to maximize test coverage)
+  // Flaky Test = test that something passes and sometimes fails
+  // Mocks - lets us replace a method with fake version
+  // spyOn() records every time a method is used
+
+  // Integration Test = tests many units/pieces of code working together
+  // 2 things to test
+  // 1. How the page looks
+  // 2. How the page behaves
+
+  // Hooks
+  // lets us run some code for each test
+
+  // Hooks in Jasmine
+  // beforeEach() = runs code before each test
+  // afterEach() = runs code after each test
+  // beforeAll() = runs code before all tests
+  // afterAll() = runs code after all tests
+
+  // Process
+  // 1. Make changes to code
+  // 2. Re-run the tests
+  // 3. Save to Git
+
+  // Object-Oriented Programming (OOP)
+  // - another style of programming (another way we write our code)
+  // - orgranizing our code into objects (tries to represent the real world)
+  // - Easy to create multiple objects
+  // - naming convention is to Use PascalCase for things that generate objects
+  // PascalCase = start every word with a capital
+
+  // Procedural Programming
+  // Procedure - a set of step by step instructions
+
+  // export let cart; - shortcut for (export let cart = undefined;)
+  // this - points to the object that we generate
+
+  // Why do we use Object-Oriented Programming?
+  // Object Oriented Programming
+  // - tries to represent the real world
+
+  // Class = object generator
+  // - help us generate these objects
+
+  // Benefits of Classes
+  // A class looks like the object that it generates
+  // Classes have extra features for Object-Oriented Programming
+  // 1. Constructor
+  // = lets us run setup code
+  // Contructor lets us put this setup code inside the class
+  
+  // class = better way to generate objects in object-oriented programming
+  
+  // More details about constructor
+  // 1. Has to be named "constructor"
+  // 2. Should not return anything 
+
+  // Private properties and methods
+
+  // Private properties
+  // Private = it can only be accessed inside the class
+  // field = property
+  // #localStorageKey; // Private property
+  // Private Methods
+  // Private = it can only be accessed inside the class
+  // #loadFromStorage(); // Private method
+  // we're only using this private method inside class
+  // Class let's us create private properties and methods,
+  // this is useful on a bigger project, 
+  // where which properties and methods are supposed to use outside the class and which one to avoid.
+
+  // Inheritance
+  // lets us reuse code between classes
+  // We use inheritance when we have One class is a more specific type of another class
+  // super() - basically calls the Constructor of the Parent class
+  // type: "clothing" = so type tells us which class we should use when we're converting into class, 
+  // this is sometimes called a discriminator property
+  
+  // Polymorphism
+  // - use a method without knowing the class
+  // polymorphism is sort of like an alternative to doing if statement / ternary
+  // If-statement / Ternary operator
+  // ${
+  //   product instanceof Clothing
+  //     ? `<a href="${product.sizeChartLink}">Size Chart</a>` : ''
+  // };
+  // Polymorphism
+  // we can just have both of the classes use the same method
+  // The class wil determine what this method does
+  // ${product.extraInfoHTML()}
+  // if we add a new class
+  // class Appliance extends Products {
+      // ...
+      // extraInfoHTML() {
+      //   // Download instructions.
+      // }
+  // }
+  // we don't need to change this code - ${product.extraInfoHTML()}
+
+  // Built-in classes
+  // - classes that are provided by the language
+  // new Date() - generates an object that represent the current date
+  // .toLocalTimeString() - gives the current time
+
+  // this
+  // - lets an object access its own properties
+  // - can be used anywhere in our code
+  // - use "this" inside a function
+  // - Inside a function, we can change "this" to whatever we want
+  // .call()
+  // - Arrow functions do not change the value of "this"
+  // "this" keeps the value that it had outside the arrow function
+  // Inside a regular function, this = undefined
+
+  // Summary of "this"
+  // const object3 = {
+  //   method: () => {
+  //     console.log(this /* undfined */ ); // "this" will have the same value as outside the arrow function
+  //   }
+  // } - Inside a method, "this" points to the outer object
+  // function logThis() {
+  //   console.log(this);
+  // } - Inside a function "this = undefined"
+  // logThis.call('Hello'); But we can change it to whatever we want using something like .call()
+  // console.log(this);
+  // [1, 2, 3].forEach(() => {
+  //   console.log(this);
+  // }) - Arrow functions, do not change the value of "this"
+  // 1. If there's an object to point to, this will point to that object
+  // 2. If there's no object to point to, this will be undefined,
+  // and we have tools like .call() and arrow functions to kind of manipulate the value of "this" to be what we want
+  // the more that you work with it the more you just get used to it
+  -->
+
+  <!--   
+  // Backend
+  
+  // What is backend?
+  // - another computer that manages the data of a website
+  // XMLHttpRequest
+  // - This is a built-in class (provided by JavaScript)
+  // - Creates a new HTTP message to send to the backend
+  // - message = request
+
+  // open()
+  // - The XMLHttpRequest method open() initializes a newly-created request, or re-initializes an existing one.
+  // open('GET', 'https://supersimplebackend.dev') - it have 2 parameters, 
+  // 1. Type of HTTP message
+  // 2. Where to send this HTTP message
+
+  // Type of request
+  // GET = get some information from the backend
+  // POST
+  // PUT
+  // DELETE
+  // Request Response Cycle = 1 request, 1 response
+
+  // URL = Uniform Resource Locator
+  // https://supersimplebackend.dev
+  // - Like an address, but for the internet.
+  // - Helps us locate another computer on the internet
+  // send()
+  // - asynchronous code
+  // -sends the request to the server.
+  // xhr.response = undefined 
+  // - will be undefined at first
+  // - It takes time for the request to travel accross the Internet
+
+  // URL Paths
+  // https://supersimplebackend.dev/hello
+  // https://supersimplebackend.dev/products/first
+  // https://supersimplebackend.dev/
+  // - Each URL path will give us a different response.
+  // - If we send a request to a URL pat that is not supported,
+  // - the backend will respond with an error.
+
+  // Status Code
+  // Starts with 4 or 5 (400, 404, 500) = failed
+     - Starts with 4 = Our problem
+     - Starts with 5 = Backend's problem
+  // Starts with 2 (200, 201, 204) = succeeded
+  // The list of all the URL paths that supported is called the,
+  // Backend API
+     - Application programming interface
+  // interface - How we interact with something
+
+  // The backend can respond with different types of data
+     - Text
+      - Content-Type: text
+     - JSON = This allow us to send JavaScript objects across the Internet, to the backend
+      - Content-Type: application/json
+     - HTML
+      - Content-Type: text/html
+     - Image
+      - Content-Type: image/jpeg
+  // When we type a URL in the browser, it actually sends a GET a request.
+     - Using the browser = making a GET request
+  -->
+</body>
+</html>
