@@ -298,6 +298,42 @@
       - Content-Type: image/jpeg
   // When we type a URL in the browser, it actually sends a GET a request.
      - Using the browser = making a GET request
+
+  // Callback
+    - a function to run in the future
+    - Multiple callbacks cause a lot of nesting
+    - nesting means having code inside code
+  // Anonymous function
+    - (function without a name)
+  // done()
+    - lets us control when to go to the next step
+    - we can also use done() inside beforeEach((done) => {}), and inside it((done) => {}),
+     - to wait for backend code to finished
+  
+  // Promises
+    - better way to handle asynchronous code
+    - similar to done() function
+    - let us wait for some code to finish, before going to the next step
+    - promise is a built-in class, when we create a promise we need to give it a function
+    - new Promise()
+    - so when we create the Promise it's going to run the function immediately
+    - not the inner function gets a parameter called 'resovle'.
+     - resolve is a function
+     - similar to done() function
+     - lets us control when to go to the next step
+   // Why do we use Promises?
+    - Promises let us flatten our code
+    - Use promises instead of callbacks
+    - Promises keep our code more flat
+   // More features of Promse
+    - 1. feature is we can give resoleve() a value
+    - 2. We can run multiple promises at the same time
+     - Promise.all()
+      - lets us run multiple promises at the same time
+      - and wait for all of them to finish
+   // fetch()
+    - better way to make HTTP request
+    -fetch() uses a promise
   -->
 </body>
 </html>
