@@ -321,19 +321,34 @@
      - resolve is a function
      - similar to done() function
      - lets us control when to go to the next step
-   // Why do we use Promises?
+  // Why do we use Promises?
     - Promises let us flatten our code
     - Use promises instead of callbacks
     - Promises keep our code more flat
-   // More features of Promse
+  // More features of Promse
     - 1. feature is we can give resoleve() a value
     - 2. We can run multiple promises at the same time
      - Promise.all()
       - lets us run multiple promises at the same time
       - and wait for all of them to finish
-   // fetch()
+  // fetch()
     - better way to make HTTP request
     -fetch() uses a promise
+
+  // Async Await
+    - even better way to handle asynchronous code
+    - Async await is a shortcut for promises.
+    - async = makes a function return a promise
+  // What's the point of this feature
+    - async lets us use await
+  // await
+    - lets us wait for a promise to finish, before going to the next line
+    - lets us write asynchronous code like normal code.
+    - We can only use await, when we're inside an async function
+    - The closest function has to be async
+    - async await can only be used with promises.
+    - we can write asynchronous code like normal code
+  
   -->
 </body>
 </html>
