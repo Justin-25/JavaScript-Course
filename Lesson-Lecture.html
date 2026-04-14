@@ -253,9 +253,11 @@
 
   // Type of request
   // GET = get some information from the backend
-  // POST
-  // PUT
-  // DELETE
+      - GET request don't really let us send data to the backend
+  // POST = create something
+      - POST lets us send data to the backend
+  // PUT = update something
+  // DELETE = delete something
   // Request Response Cycle = 1 request, 1 response
 
   // URL = Uniform Resource Locator
@@ -339,6 +341,7 @@
     - even better way to handle asynchronous code
     - Async await is a shortcut for promises.
     - async = makes a function return a promise
+    - lets us write asynchronous code like normal code.
   // What's the point of this feature
     - async lets us use await
   // await
@@ -348,7 +351,53 @@
     - The closest function has to be async
     - async await can only be used with promises.
     - we can write asynchronous code like normal code
-  
+    - Use async await, over promises and callbacks
+  // Error Handliong
+    - When we're sending HTTP request, we could get unexpected errors.
+    - For callbacks we usually, Set up a separate callback just for errors
+  // Handle errors in promises
+    - .catch() that will run this if there's an error
+  // Handle errors in async await
+    - try/catch more details
+    - we put our code that can cause an error inside try and if there is an error it's going to run the code inside catch
+    - one thing to know about try/catch, we don't have to use it with async await
+    - We can use try/catch with synchronous code (or normal code)
+    - We can use try/catch to catch errors in normal code
+    - Whenever we get an error, it will skip the rest of the code  
+  // Why don't we use try/catch everywhere?
+    - it's meant to handle unexpected errors
+      (code is correct, outside our control caused the error) so we can give some intructions on what to do
+  // We can manually create errors
+    - throw = creates a new error or it throws an error that we're going to catch later
+    - throw does not work in the future
+  // if we're using Promises
+    - there are 2 ways to manually create an error.
+    - 2nd way to create an error, in a promise
+      - If we need to create an error in the future,
+      - then we need to use different code.
+  // reject() is a function
+    - it lets us create an error in the future
+  // URL Parameters
+    - let us save data directly in the URL
+    - ? means we're adding a URL parameter to this URL
+    - so a parameter is a property value pair
+    - the left side is a property and the right side is a value
+      - http://127.0.0.1:5500/tracking.html?orderId=123
+    - this is sort of like an object
+      - {
+        orderId: '123'
+      }
+    - using URL parameters we can save some data in the URL
+    - we can use JavaScript to get this data out of the URL
+    - URL parameters = search parameters
+    - URL parameters lets us save different data in each URL
+
+  // What's the next step after this course?
+    - Learn how to code React, JSX and TypeScript
+    - Learn how to create our own backend
+      1. Command line
+      2. NodeJS = create our own backend
+    - Also after this course, learn how to put a website on the internet  
   -->
 </body>
 </html>
